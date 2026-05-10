@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memexcode"
+dynamic = ["version"]
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Solveit", email = "nobody@fast.ai"}]
+keywords = ['nbdev']
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = ["orjson", "fastcore", "pluggy", "fastlite"]
+
+[project.urls]
+Repository = "https://github.com/Rahuketu86/memexcode"
+Documentation = "https://Rahuketu86.github.io/memexcode/"
+
+[project.entry-points.nbdev]
+memexcode = "memexcode._modidx:d"
+
+[project.entry-points."memexcode.store"]
+memory = "memexcode.memory_store"
+jsonl = "memexcode.jsonl_store"
+sqlite = "memexcode.sqlite_store"
+
+[tool.setuptools.dynamic]
+version = {attr = "memexcode.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["memexcode"]
+
+[tool.nbdev]

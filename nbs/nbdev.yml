@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "memexcode"
+  site-url: "https://Rahuketu86.github.io/memexcode"
+  description: ""
+  repo-branch: main
+  repo-url: "https://github.com/Rahuketu86/memexcode"
